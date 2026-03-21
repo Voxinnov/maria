@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #fbf8f1;
+  --color-primary-100: #f5eedc;
+  --color-primary-500: #c19a6b;
+  --color-primary-600: #a88456;
+  --color-primary-900: #2c251d;
+  
+  --font-serif: "Marcellus", serif;
+  --font-sans: "Jost", sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800 bg-[#f4f0e6] antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.luxury-gradient {
+  background: linear-gradient(135deg, #1f2937 0%, #000000 100%);
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #aa8c2c 100%);
+}

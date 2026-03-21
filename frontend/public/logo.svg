@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 70" width="340" height="70">
+  <defs>
+    <style>
+      .gold { fill: #cba343; }
+      .gold-stroke { stroke: #cba343; fill: none; }
+      .text-title { font-family: 'Times New Roman', Times, serif; font-size: 26px; font-weight: bold; fill: #cba343; letter-spacing: 0.05em; }
+      .text-sub { font-family: 'Times New Roman', Times, serif; font-size: 15px; font-weight: bold; fill: #cba343; letter-spacing: 0.1em; }
+    </style>
+  </defs>
+
+  <!-- Crown Dots -->
+  <circle cx="15" cy="18" r="2.5" class="gold" />
+  <circle cx="28" cy="12" r="2.5" class="gold" />
+  <circle cx="42.5" cy="8" r="2.5" class="gold" />
+  <circle cx="57" cy="12" r="2.5" class="gold" />
+  <circle cx="70" cy="18" r="2.5" class="gold" />
+
+  <!-- Crown Body -->
+  <path d="M 15 20 L 22 28 L 28 14 L 35 28 L 42.5 10 L 50 28 L 57 14 L 63 28 L 70 20 L 65 33 L 20 33 Z" class="gold" />
+  
+  <!-- Separator Line -->
+  <rect x="22" y="38" width="41" height="2.5" class="gold" />
+
+  <!-- The "M" Logo -->
+  <path d="M 12 65 C 16 40 30 35 42.5 48 C 55 35 69 40 73 65 L 67 65 C 64 45 54 45 42.5 55 C 31 45 21 45 18 65 Z" class="gold" />
+  
+  <!-- Left Inner stem of M -->
+  <rect x="26" y="55" width="4" height="10" class="gold" />
+  <!-- Right Inner stem of M -->
+  <rect x="55" y="55" width="4" height="10" class="gold" />
+
+  <!-- Text -->
+  <text x="90" y="32" class="text-title">HOTEL MARIA</text>
+  <text x="105" y="54" class="text-sub">INTERNATIONAL</text>
+
+</svg>
