@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Mail, Clock, Phone } from 'lucide-react';
+import SEO from '../components/SEO';
+
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +24,7 @@ const ContactPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch('http://localhost:5001/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
@@ -39,6 +41,10 @@ const ContactPage = () => {
 
   return (
     <div className="bg-[#f4f0e6] text-[#232322] min-h-screen font-sans selection:bg-primary-500 selection:text-white pt-24 pb-12">
+      <SEO 
+        title="Connect With Us" 
+        description="Get in touch with Hotel Maria International for bookings, inquiries, or feedback. We are here to ensure your stay in Kothamangalam is exceptional."
+      />
       
       {/* 1. Page Header */}
       <section className="relative px-6 lg:px-12 py-20 max-w-[100rem] mx-auto text-center border-b border-[#d1cdba]/50">
@@ -58,8 +64,9 @@ const ContactPage = () => {
             
             {/* Left: Form */}
             <motion.div 
+              id="contact-form"
               initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 1 }}
-              className="lg:w-[55%]"
+              className="lg:w-[55%] scroll-mt-24"
             >
               <h2 className="text-3xl md:text-4xl font-serif text-[#232322] mb-2">
                 Send a message
@@ -187,7 +194,7 @@ const ContactPage = () => {
       <section className="w-full h-[60vh] md:h-[70vh] relative grayscale-[20%] mt-8 border-y border-[#d1cdba]/30">
         <iframe 
           title="Hotel Maria Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15714.48421060965!2d76.5935639!3d10.05608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07e7161b975fd5%3A0x7d8000b95eb04d2e!2sHotel%20Maria%20International!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.437324316037!2d76.6228058!3d10.0632067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07e61272a288eb%3A0x864a2dd3c8426ae8!2sHotel%20Maria%20International!5e0!3m2!1sen!2sin!4v1774525004943!5m2!1sen!2sin" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 

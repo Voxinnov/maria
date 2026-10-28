@@ -12,9 +12,12 @@ import ContactPage from './pages/ContactPage';
 import BookingPage from './pages/BookingPage';
 import RestaurantPage from './pages/RestaurantPage';
 import AttractionsPage from './pages/AttractionsPage';
+import AttractionDetailPage from './pages/AttractionDetailPage';
+import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
@@ -29,6 +32,7 @@ function App() {
             <Route path="/booking" element={<BookingPage />} />
             <Route path="/restaurant" element={<RestaurantPage />} />
             <Route path="/attractions" element={<AttractionsPage />} />
+            <Route path="/attractions/:slug" element={<AttractionDetailPage />} />
           </Routes>
         </main>
         <Footer />

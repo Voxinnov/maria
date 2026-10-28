@@ -1,6 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import aboutHotelImg from '../assets/about-hotel.jpg';
+import SEO from '../components/SEO';
+
+
+// Import local images for attractions
+import damImg from '../assets/nearestatraction/bhoothathankettu-dam-1.jpg';
+import birdImg from '../assets/nearestatraction/thattekkadu-bird-sanctuary.jpg';
+import munnarImg from '../assets/nearestatraction/munnar-1.jpg';
+import elephantImg from '../assets/nearestatraction/kodanad-elephant-park-1.jpg';
 
 const AboutPage = () => {
   const fadeUp = {
@@ -11,28 +20,32 @@ const AboutPage = () => {
   const attractions = [
     {
       title: "Bhoothathankettu Dam",
-      img: "https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&q=80&w=800",
-      desc: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores."
+      img: damImg,
+      desc: "A sprawling dam and idyllic tourist site featuring breathtaking panoramic views and serene boating opportunities deeply rooted in ancient mythological lore."
     },
     {
       title: "Thattekkad Bird Sanctuary",
-      img: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800",
-      desc: "Covering an area of barely 25 sq km, this was the first bird sanctuary established in Kerala under the guidance of Salim Ali."
+      img: birdImg,
+      desc: "Universally acclaimed as one of the richest bird habitats in peninsular India, home to over 300 species of rare and migratory birds."
     },
     {
       title: "Munnar",
-      img: "https://images.unsplash.com/photo-1542314831-c6a4d27ce6a2?auto=format&fit=crop&q=80&w=800",
-      desc: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores."
+      img: munnarImg,
+      desc: "An absolutely breathtaking hill station globally renowned for its sprawling, meticulously manicured tea plantations and eternally cool climate."
     },
     {
       title: "Kodanad Elephant Park",
-      img: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=800",
-      desc: "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores."
+      img: elephantImg,
+      desc: "A historic elephant rescue and training center situated gracefully on the southern banks of the Periyar river."
     }
   ];
 
   return (
     <div className="bg-[#f4f0e6] text-[#232322] min-h-screen font-sans selection:bg-primary-500 selection:text-white pt-24 pb-12">
+      <SEO 
+        title="Our Story" 
+        description="Learn about the heritage and hospitality of Hotel Maria International. Discover why we are the preferred choice for travelers in Kothamangalam."
+      />
       
       {/* 1. Page Header */}
       <section className="relative px-6 lg:px-12 py-20 lg:py-32 max-w-[100rem] mx-auto text-center border-b border-[#d1cdba]">
@@ -58,9 +71,9 @@ const AboutPage = () => {
               className="lg:w-1/2 overflow-hidden bg-[#e8e6df] aspect-[4/5] w-full"
             >
               <img 
-                src="https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&q=80&w=1200" 
+                src={aboutHotelImg} 
                 alt="Hotel Maria Architecture" 
-                className="w-full h-full object-cover grayscale-[20%]"
+                className="w-full h-full object-cover"
               />
             </motion.div>
 

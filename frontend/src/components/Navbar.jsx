@@ -65,7 +65,7 @@ const Navbar = () => {
             {/* Book Now Button Desktop */}
             <div className="hidden lg:flex relative z-20">
               <Link 
-                to="/booking" 
+                to="/contact#contact-form" 
                 className="px-8 py-3 text-[10px] font-semibold tracking-[0.2em] uppercase transition-all duration-300 border border-[#232322] text-[#232322] hover:bg-[#232322] hover:text-[#f4f0e6]"
               >
                 Book
@@ -103,7 +103,7 @@ const Navbar = () => {
               </Link>
             ))}
             <Link 
-              to="/booking" 
+              to="/contact#contact-form" 
               onClick={() => setMobileMenuOpen(false)}
               className="mt-8 px-12 py-4 border border-[#232322] text-[#232322] font-semibold uppercase tracking-widest text-xs hover:bg-[#232322] hover:text-[#f4f0e6] transition-colors"
             >

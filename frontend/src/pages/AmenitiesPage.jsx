@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
+
 
 const AmenitiesPage = () => {
   const fadeUp = {
@@ -37,6 +39,10 @@ const AmenitiesPage = () => {
 
   return (
     <div className="bg-[#f4f0e6] text-[#232322] min-h-screen font-sans selection:bg-primary-500 selection:text-white pt-24 pb-12">
+      <SEO 
+        title="Facilities & Amenities" 
+        description="Discover the world-class facilities and amenities at Hotel Maria International, including professional laundry service, high-speed internet, and more."
+      />
       
       {/* 1. Page Header */}
       <section className="relative px-6 lg:px-12 py-20 lg:py-32 max-w-[100rem] mx-auto text-center border-b border-[#d1cdba]">

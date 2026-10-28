@@ -1,5 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import restaurantImg from '../assets/restaurant.jpg';
+import SEO from '../components/SEO';
+
 
 const RestaurantPage = () => {
   const fadeUp = {
@@ -36,6 +39,10 @@ const RestaurantPage = () => {
 
   return (
     <div className="bg-[#f4f0e6] text-[#232322] min-h-screen font-sans selection:bg-primary-500 selection:text-white pt-24 pb-12">
+      <SEO 
+        title="Fine Dining" 
+        description="Savor exquisite local and international cuisines at our Michelin-selected restaurant. Experience the best dining in Kothamangalam."
+      />
       
       {/* 1. Page Header */}
       <section className="relative px-6 lg:px-12 py-20 lg:py-32 max-w-[100rem] mx-auto text-center border-b border-[#d1cdba]/50">
@@ -84,8 +91,8 @@ const RestaurantPage = () => {
                 className="overflow-hidden aspect-[4/5] bg-[#e8e6df] w-full"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Restaurant Intimate Dining" 
+                  src={restaurantImg} 
+                  alt="Hotel Maria Restaurant" 
                   className="w-full h-full object-cover grayscale-[15%] hover:grayscale-0 hover:scale-105 transition-all duration-[2s] ease-out"
                 />
               </motion.div>

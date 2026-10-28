@@ -1,5 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
+
+
+// Import local images
+import thattekkadHero from '../assets/nearestatraction/thattekkadu-bird-sanctuary.jpg';
+import munnarHero from '../assets/nearestatraction/munnar-1.jpg';
+import kodanadHero from '../assets/nearestatraction/kodanad-elephant-park-1.jpg';
+import thommankuthuHero from '../assets/nearestatraction/thommankuthu-falls-1.jpg';
+import bhoothathankettuHero from '../assets/nearestatraction/bhoothathankettu-dam-1.jpg';
 
 const ImageCarousel = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,50 +64,53 @@ const AttractionsPage = () => {
 
   const destinations = [
     {
+      slug: "thattekkad-bird-sanctuary",
       title: "Thattekkad Bird Sanctuary",
       desc: "Covering an area of barely 25 sq km, this sanctuary was the first of its kind established in Kerala under the guidance of renowned ornithologist Salim Ali. It is universally acclaimed as one of the richest bird habitats in peninsular India, comparable only to the eastern Himalayas.",
       images: [
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=1200", 
-        "https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&q=80&w=1200"
+        thattekkadHero
       ]
     },
     {
+      slug: "bhoothathankettu-dam",
       title: "Bhoothathankettu Dam",
       desc: "A sprawling dam and idyllic tourist site featuring breathtaking panoramic views and serene boating opportunities. The area sits deeply rooted in ancient mythological lore surrounding the rocky natural formations along the winding Periyar river.",
       images: [
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&q=80&w=1200",
-        "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=1200"
+        bhoothathankettuHero
       ]
     },
     {
+      slug: "munnar",
       title: "Munnar",
       desc: "An absolutely breathtaking hill station globally renowned for its sprawling, meticulously manicured tea plantations, winding scenic roads, and eternally cool climate. It is the perfect escape into misty valleys and emerald green mountains.",
       images: [
-        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200",
-        "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1200",
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=1200"
+        munnarHero
       ]
     },
     {
+      slug: "kodanad-elephant-park",
       title: "Kodanad Elephant Park",
       desc: "Situated gracefully on the southern banks of the Periyar river, Kodanad is one of the most reputed and historic elephant rescue and training centers in Kerala. Connect closely with nature's most magnificent and gentle giants.",
       images: [
-        "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&q=80&w=1200",
-        "https://images.unsplash.com/photo-1542314831-c6a4d27ce6a2?auto=format&fit=crop&q=80&w=1200"
+        kodanadHero
       ]
     },
     {
+      slug: "thommankuthu-water-falls",
       title: "Thommankuthu Water Falls",
       desc: "A dramatic 7-step cascading waterfall ideal for adventure trekking and exploring the dense wilderness. Experience the captivating sound of raw nature crashing through the thick green canopy.",
       images: [
-        "https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&q=80&w=1200",
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=1200"
+        thommankuthuHero
       ]
     }
   ];
 
   return (
     <div className="bg-[#f4f0e6] text-[#232322] min-h-screen font-sans selection:bg-primary-500 selection:text-white pt-24 pb-12">
+      <SEO 
+        title="Local Attractions" 
+        description="Explore the beauty of Kothamangalam. Discover nearby attractions like Bhoothathankettu Dam, Munnar, and Thattekkadu Bird Sanctuary."
+      />
       
       {/* 1. Page Header */}
       <section className="relative px-6 lg:px-12 py-20 lg:py-32 max-w-[100rem] mx-auto text-center border-b border-[#d1cdba]/50">
@@ -136,9 +150,12 @@ const AttractionsPage = () => {
                       {place.title}.
                     </h2>
                     <div className="w-12 h-[1px] bg-[#d1cdba] mb-8"></div>
-                    <p className="text-[#5b5851] text-lg font-light leading-relaxed">
+                    <p className="text-[#5b5851] text-lg font-light leading-relaxed mb-8">
                       {place.desc}
                     </p>
+                    <Link to={`/attractions/${place.slug}`} className="inline-flex items-center text-xs tracking-widest text-[#232322] border-b border-[#232322]/20 hover:border-[#232322] pb-1 transition-all uppercase font-medium group">
+                      Read More <ArrowRight className="w-4 h-4 ml-3 group-hover:translate-x-1 transition-transform" />
+                    </Link>
                   </motion.div>
 
                   {/* Interactive Carousel Block */}

@@ -34,12 +34,13 @@ const Footer = () => {
           
           <div className="md:col-span-8 lg:col-span-7 grid grid-cols-2 lg:grid-cols-3 gap-12">
             <div className="space-y-8">
-              <h4 className="text-[10px] uppercase tracking-widest text-[#d1cdba] font-semibold">The Retreat</h4>
+              <h4 className="text-[10px] uppercase tracking-widest text-[#d1cdba] font-semibold">Quick Links</h4>
               <ul className="space-y-4">
-                <li><Link to="/about" className="text-sm font-light text-[#8a867d] hover:text-[#f4f0e6] transition-colors">Philosophy</Link></li>
-                <li><Link to="/rooms" className="text-sm font-light text-[#8a867d] hover:text-[#f4f0e6] transition-colors">Sanctuaries</Link></li>
-                <li><Link to="/amenities" className="text-sm font-light text-[#8a867d] hover:text-[#f4f0e6] transition-colors">Wellness SPA</Link></li>
-                <li><Link to="/gallery" className="text-sm font-light text-[#8a867d] hover:text-[#f4f0e6] transition-colors">Visual Journey</Link></li>
+                <li><Link to="/" className="text-sm font-light text-[#8a867d] hover:text-[#f4f0e6] transition-colors">Home</Link></li>
+                <li><Link to="/about" className="text-sm font-light text-[#8a867d] hover:text-[#f4f0e6] transition-colors">About Us</Link></li>
+                <li><Link to="/attractions" className="text-sm font-light text-[#8a867d] hover:text-[#f4f0e6] transition-colors">Near by Attractions</Link></li>
+                <li><Link to="/gallery" className="text-sm font-light text-[#8a867d] hover:text-[#f4f0e6] transition-colors">Gallery</Link></li>
+                <li><Link to="/contact" className="text-sm font-light text-[#8a867d] hover:text-[#f4f0e6] transition-colors">Contact Us</Link></li>
               </ul>
             </div>
             

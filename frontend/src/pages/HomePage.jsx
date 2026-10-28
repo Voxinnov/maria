@@ -2,6 +2,17 @@ import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, Play } from 'lucide-react';
+import banner0 from '../assets/banner/banner0.jpg';
+import banner1 from '../assets/banner/banner1.jpg';
+import banner2 from '../assets/banner/banner2.jpg';
+import banner3 from '../assets/banner/banner3.jpg';
+import gallery1 from '../assets/gallery/gallery-1.jpg';
+import gallery2 from '../assets/gallery/gallery-2.jpg';
+import gallery3 from '../assets/gallery/gallery-3.jpg';
+import gallery4 from '../assets/gallery/gallery-4.jpg';
+import gallery5 from '../assets/gallery/gallery-5.jpg';
+import restaurantHome from '../assets/restaurant-home.jpg';
+import SEO from '../components/SEO';
 
 const HomePage = () => {
   const horizontalRef = useRef(null);
@@ -18,6 +29,10 @@ const HomePage = () => {
 
   return (
     <div className="bg-[#f4f0e6] text-[#232322] min-h-screen font-sans selection:bg-primary-500 selection:text-white">
+      <SEO 
+        title="Home" 
+        description="Experience luxury and comfort at Hotel Maria International, the premier hotel in Kothamangalam. Offering elegantly designed rooms, fine dining, and modern amenities."
+      />
       
       {/* 1. Cinematic Split-Screen Hero */}
       <section className="relative h-screen flex flex-col lg:flex-row">
@@ -28,22 +43,22 @@ const HomePage = () => {
             className="space-y-6"
           >
             <p className="tracking-[0.2em] text-[#8a867d] text-xs uppercase font-medium">Resort & Spa</p>
-            <h1 className="text-6xl md:text-8xl lg:text-[7rem] font-serif leading-[0.9] text-[#232322]">
-              Hotel <br /> Maria.
+            <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-serif leading-[0.9] text-[#232322]">
+              Hotel <br /> Maria International.
             </h1>
             <p className="max-w-md text-[#5b5851] text-lg font-light leading-relaxed pt-6">
               A serene escape blending nature’s raw beauty with uncompromising architectural elegance. Find your center in our secluded sanctuaries.
             </p>
             <div className="pt-10 flex items-center gap-8">
-              <Link to="/booking" className="inline-block bg-[#232322] text-[#f4f0e6] px-10 py-4 text-xs font-semibold tracking-widest hover:bg-primary-600 transition-colors">
+              <Link to="/contact#contact-form" className="inline-block bg-[#232322] text-[#f4f0e6] px-10 py-4 text-xs font-semibold tracking-widest hover:bg-primary-600 transition-colors">
                 RESERVE
               </Link>
-              <button className="flex items-center gap-3 text-xs tracking-widest font-medium group hover:text-primary-600 transition-colors">
+              <Link to="/gallery" className="flex items-center gap-3 text-xs tracking-widest font-medium group hover:text-primary-600 transition-colors">
                 <span className="w-10 h-10 rounded-full border border-[#d1cdba] flex items-center justify-center group-hover:border-primary-600 transition-colors">
                   <Play className="w-3 h-3 ml-1" />
                 </span>
                 THE FILM
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>
@@ -110,9 +125,10 @@ const HeroCarousel = ({ scaleTransform }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
-    "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=2000",
-    "https://images.unsplash.com/photo-1542314831-c6a4d27ce6a2?auto=format&fit=crop&q=80&w=2000",
-    "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=2000"
+    banner0,
+    banner1,
+    banner2,
+    banner3
   ];
 
   useEffect(() => {
@@ -183,9 +199,9 @@ const RestaurantSection = () => {
               initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 1.2 }}
               className="overflow-hidden aspect-[4/5] bg-[#e8e6df] w-full max-w-md ml-auto relative group"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=1200" 
-                alt="Restaurant Dining" 
+               <img 
+                src={restaurantHome} 
+                alt="Hotel Maria Restaurant" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] ease-out origin-center"
               />
             </motion.div>
@@ -195,9 +211,9 @@ const RestaurantSection = () => {
               initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 1.2, delay: 0.3 }}
               className="absolute -bottom-16 left-0 lg:left-12 w-48 lg:w-64 aspect-[3/4] border-8 border-[#f4f0e6] hidden md:block overflow-hidden bg-[#e8e6df]"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=800" 
-                alt="Chef details"
+               <img 
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800" 
+                alt="Gourmet Dining Table"
                 className="w-full h-full object-cover"
               />
             </motion.div>
@@ -214,24 +230,29 @@ const HoverAccordionGallery = () => {
 
   const gallery = [
     {
-      title: "The Grand Foyer",
-      img: "https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&q=80&w=1200",
-      desc: "An entrance designed to leave a profound, lasting impression of architectural purity."
+      title: "Divine Inspiration",
+      img: gallery1,
+      desc: "Celebrating the heritage and sacred art that informs our sense of peace and belonging."
     },
     {
-      title: "Thermal Spa",
-      img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800",
-      desc: "Submerge yourself in therapies rooted in ancient restorative traditions."
+      title: "The Grand Exterior",
+      img: gallery2,
+      desc: "A breathtaking first look at the architectural elegance and natural surroundings of Hotel Maria."
+    },
+    {
+      title: "Dining Experience",
+      img: gallery3,
+      desc: "Exquisite multi-course dinners under the stars, where culinary art meets local flavors."
     },
     {
       title: "Lobby Lounge",
-      img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800",
-      desc: "A sanctuary to converse, read, and exist in effortless tranquility."
+      img: gallery4,
+      desc: "A spacious and serene sanctuary for contemplation and quiet conversation."
     },
     {
-      title: "Fine Dining",
-      img: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800",
-      desc: "Culinary expeditions crafted by Michelin-selected chefs in a cinematic setting."
+      title: "Lobby & Reception",
+      img: gallery5,
+      desc: "Our warm and welcoming reception area, where your journey of tranquility begins."
     }
   ];
 

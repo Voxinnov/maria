@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Play } from 'lucide-react';
+import SEO from '../components/SEO';
+
+
+import gallery1 from '../assets/gallery/gallery-1.jpg';
+import gallery2 from '../assets/gallery/gallery-2.jpg';
+import gallery3 from '../assets/gallery/gallery-3.jpg';
+import gallery4 from '../assets/gallery/gallery-4.jpg';
+import gallery5 from '../assets/gallery/gallery-5.jpg';
+import gallery6 from '../assets/gallery/gallery-6.jpg';
+import gallery7 from '../assets/gallery/gallery-7.jpg';
+import gallery8 from '../assets/gallery/gallery-8.jpg';
+import gallery9 from '../assets/gallery/gallery-9.jpg';
+import gallery10 from '../assets/gallery/gallery-10.jpg';
+import gallery11 from '../assets/gallery/gallery-11.jpg';
+import gallery12 from '../assets/gallery/gallery-12.jpg';
 
 const GalleryPage = () => {
   const [activeTab, setActiveTab] = useState('images');
@@ -12,25 +27,34 @@ const GalleryPage = () => {
   };
 
   const images = [
-    { src: "https://images.unsplash.com/photo-1542314831-c6a4d27ce6a2?auto=format&fit=crop&q=80&w=1200", span: "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto", alt: "Grand Entrance" },
-    { src: "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&q=80&w=800", span: "col-span-1 aspect-[4/3]", alt: "Suite Interior" },
-    { src: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&q=80&w=800", span: "col-span-1 aspect-[4/3]", alt: "Spa Details" },
-    { src: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800", span: "md:col-span-2 aspect-[21/9]", alt: "Poolside" },
-    { src: "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=800", span: "col-span-1 aspect-square", alt: "Restaurant Dinner" },
-    { src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=800", span: "col-span-1 aspect-square", alt: "Chef Detail" },
-    { src: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800", span: "md:col-span-2 aspect-[16/9]", alt: "Banquet Hall" },
+    { src: gallery1, span: "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto", alt: "Sacred Icon" },
+    { src: gallery2, span: "col-span-1 aspect-[4/3]", alt: "Hotel Exterior" },
+    { src: gallery3, span: "col-span-1 aspect-[4/3]", alt: "Dining Room" },
+    { src: gallery4, span: "md:col-span-2 aspect-[21/9]", alt: "Lobby Lounge" },
+    { src: gallery5, span: "col-span-1 aspect-square", alt: "Reception Desk" },
+    { src: gallery6, span: "col-span-1 aspect-[4/3]", alt: "Suite Living Area" },
+    { src: gallery7, span: "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto", alt: "Deluxe Room" },
+    { src: gallery8, span: "col-span-1 aspect-[4/3]", alt: "Conference Room" },
+    { src: gallery9, span: "md:col-span-2 aspect-[21/9]", alt: "Lounge Area" },
+    { src: gallery10, span: "col-span-1 aspect-[4/3]", alt: "Twin Room" },
+    { src: gallery11, span: "md:col-span-2 aspect-[16/9]", alt: "Reception Desk" },
+    { src: gallery12, span: "md:col-span-2 aspect-[16/9]", alt: "Hotel Lobby" },
   ];
 
   const videos = [
-    { id: "M7lc1UVf-VE", thumb: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&q=80&w=800", title: "A Walkthrough Of Hotel Maria" },
-    { id: "J87MWuEUgGk", thumb: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=800", title: "A Day At The Sanctuary Spa" },
-    { id: "y2e-S3yN3GQ", thumb: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800", title: "Dining Experiences" },
+    { id: "M7lc1UVf-VE", thumb: gallery2, title: "A Walkthrough Of Hotel Maria" },
+    { id: "J87MWuEUgGk", thumb: gallery4, title: "A Day At The Sanctuary Spa" },
+    { id: "y2e-S3yN3GQ", thumb: gallery3, title: "Dining Experiences" },
   ];
 
   const closeLightbox = () => setSelectedMedia(null);
 
   return (
     <div className="bg-[#f4f0e6] text-[#232322] min-h-screen font-sans selection:bg-primary-500 selection:text-white pt-24 pb-12">
+      <SEO 
+        title="Visual Journey" 
+        description="Take a visual tour of Hotel Maria International. Explore images and videos of our rooms, restaurant, and elegant architecture."
+      />
       
       {/* 1. Page Header */}
       <section className="relative px-6 lg:px-12 py-20 max-w-[100rem] mx-auto text-center">

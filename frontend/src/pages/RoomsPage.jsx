@@ -2,6 +2,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import doubleRoomAcImg from '../assets/double-room-ac.jpg';
+import suiteRoomImg from '../assets/suite-room.jpg';
+import fourBeddedImg from '../assets/four-bedded-ac.jpg';
+import SEO from '../components/SEO';
+
 
 const RoomsPage = () => {
   const fadeUp = {
@@ -12,25 +17,35 @@ const RoomsPage = () => {
   const rooms = [
     {
       title: "Double Room A/C",
-      price: "1,900",
-      img: "https://images.unsplash.com/photo-1595576508898-0ad5c879a061?auto=format&fit=crop&q=80&w=1200", // High-quality unsplash replacement for standard room
+      price: "2,000",
+      img: doubleRoomAcImg,
       desc: "Comfortable and very quiet thanks to their double glazing, all of the Double rooms are furnished with a double bed and a desk. With lots of natural light, they offer a pleasant, relaxing environment.",
       notes: [
-        "Extra person (without cot) Rs. 300 / extra",
-        "Extra person (with cot) Rs. 500 / extra",
+        "Extra person Rs. 500 / extra",
         "GST Taxes are applicable",
         "Rates are on European plan",
         "Checkout time: 12 Noon"
       ]
     },
     {
-      title: "The Suite",
-      price: "2,500",
-      img: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80&w=1200", // High-quality unsplash replacement for suite
+      title: "Suite A/C",
+      price: "2,700",
+      img: suiteRoomImg,
       desc: "Comfort is key in the Suite rooms at the Hotel. It is where elegant design and modern conveniences come together in a tastefully and traditionally styled room. Experience a bit of history as the poster bed is an integral part of the traditional interior décor.",
       notes: [
-        "Extra person (without cot) Rs. 300 / extra",
-        "Extra person (with cot) Rs. 500 / extra",
+        "Extra person Rs. 500 / extra",
+        "GST Taxes are applicable",
+        "Rates are on European plan",
+        "Checkout time: 12 Noon"
+      ]
+    },
+    {
+      title: "4 Bedded A/C",
+      price: "3,200",
+      img: fourBeddedImg,
+      desc: "Perfect for families or groups, the 4 Bedded room offers generous space with four comfortable beds, modern furnishings, and all the amenities needed for a relaxing and convenient stay in Kothamangalam.",
+      notes: [
+        "Extra person Rs. 500 / extra",
         "GST Taxes are applicable",
         "Rates are on European plan",
         "Checkout time: 12 Noon"
@@ -40,6 +55,10 @@ const RoomsPage = () => {
 
   return (
     <div className="bg-[#f4f0e6] text-[#232322] min-h-screen font-sans selection:bg-primary-500 selection:text-white pt-24 pb-12">
+      <SEO 
+        title="Rooms & Suites" 
+        description="Explore our range of comfortable and elegantly designed rooms and suites in Kothamangalam. From double rooms to luxury suites, find your perfect stay."
+      />
       
       {/* 1. Page Header */}
       <section className="relative px-6 lg:px-12 py-20 lg:py-32 max-w-[100rem] mx-auto text-center border-b border-[#d1cdba]/50">
@@ -94,7 +113,7 @@ const RoomsPage = () => {
                     <div className="mb-8">
                       <h2 className="text-4xl md:text-5xl font-serif text-[#232322] mb-4">{room.title}</h2>
                       <p className="text-2xl font-serif text-[#a88456] italic">
-                        Rs. {room.price} <span className="text-xs tracking-widest text-[#8a867d] uppercase not-italic font-sans">/ Night</span>
+                        Rs. {room.price} <span className="text-xs tracking-widest text-[#8a867d] uppercase not-italic font-sans">/ Night + Tax</span>
                       </p>
                     </div>
 
@@ -114,7 +133,7 @@ const RoomsPage = () => {
                       </ul>
                     </div>
 
-                    <Link to="/booking" className="inline-flex items-center text-xs tracking-widest text-[#232322] border-b border-[#232322]/20 hover:border-[#232322] pb-1 transition-all uppercase font-medium self-start w-auto">
+                    <Link to="/contact#contact-form" className="inline-flex items-center text-xs tracking-widest text-[#232322] border-b border-[#232322]/20 hover:border-[#232322] pb-1 transition-all uppercase font-medium self-start w-auto">
                       Reserve this room <ArrowRight className="w-4 h-4 ml-3" />
                     </Link>
 
